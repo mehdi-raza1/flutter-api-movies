@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mehdifirstfast/rowcolumn.dart';
 import 'package:mehdifirstfast/stackscreen.dart';
 
+import 'Fashion_UI_practise/Fashion.dart';
 import 'Reusable_widget.dart';
 import 'Validation/forms_screen.dart';
 import 'navigation_bottom/bottom_bar.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home : Bottom_bar(),
+      home : FashionDesign(),
       debugShowCheckedModeBanner: false,
     );
   }
