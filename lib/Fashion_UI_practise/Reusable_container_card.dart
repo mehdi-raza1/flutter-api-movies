@@ -13,11 +13,13 @@ class CardContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      width: 50,
+      width: 90,
      // color: Colors.black,
       decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
-          image: NetworkImage(urlimage)
+          fit: BoxFit.cover,
+            image: NetworkImage(urlimage)
         )
       ),
     );

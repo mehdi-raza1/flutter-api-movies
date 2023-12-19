@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mehdifirstfast/Fashion_UI_practise/Reusable_container_card.dart';
 
+import 'login_page.dart';
+
 class FashionDesign extends StatefulWidget {
   const FashionDesign({Key? key}) : super(key: key);
 
@@ -12,7 +14,9 @@ class _FashionDesignState extends State<FashionDesign> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Color(0xffff9b9b),
         elevation: 0,
         title: const Text('Fashion'),
         leading: Builder(
@@ -22,11 +26,16 @@ class _FashionDesignState extends State<FashionDesign> {
                   },
                   icon: const Icon(Icons.accessibility_new_sharp),
                 )),
-        actions: const [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage('images/fashion.png'),
-          )
+        actions:  [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LogInPage(),));
+          }, icon: Icon(Icons.bungalow_outlined,size: 35,),)
+
+          // CircleAvatar(
+          //   radius: 20,
+          //
+          //   backgroundImage: AssetImage('images/fashion.png'),
+          // )
         ],
       ),
       drawer: Drawer(
@@ -132,6 +141,7 @@ class _FashionDesignState extends State<FashionDesign> {
         ),
       ),
       body: Column(
+
         children: [
           //SizedBox(height: 10,),
           Container(
@@ -141,7 +151,7 @@ class _FashionDesignState extends State<FashionDesign> {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                        'https://www.orchardtaunton.co.uk/app/uploads/2020/03/OSC-Spring-Generic-2020-Website-Fashion-Banner-01.jpg'))),
+                        'https://i.pngimg.me/thumb/f/720/f60f9d2b75b24e3eb247.jpg'))),
           ),
           const SizedBox(
             height: 10,
@@ -193,6 +203,73 @@ class _FashionDesignState extends State<FashionDesign> {
                     'https://thumbs.dreamstime.com/b/portrait-two-sexy-pretty-beautiful-women-fashion-style-clothes-sisters-long-curly-hair-perfect-make-up-people-lifestyle-113021487.jpg',
               ),
             ],
+          ),
+          SizedBox(height: 40,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: const [
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Top Features',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+          SizedBox(height: 20,),
+          Row(
+
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 150,
+                height: 200,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.8),
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                          offset: Offset(10,10)
+                      )
+                    ],
+                  // color: Colors.black,
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('images/fea1.jpg'),
+                      )
+                  ),
+                ),
+
+                const SizedBox(width: 30,),
+                Container(
+                  width: 150,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.8),
+                           blurRadius: 10,
+                           spreadRadius: 1,
+                           offset: Offset(10,10)
+                      )
+                    ],
+                     // color: Colors.black,
+                      borderRadius: BorderRadius.circular(20),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image:AssetImage('images/fea1.jpg'),
+                    )
+                  ),
+                ),
+
+            ]
+
           )
         ],
       ),
