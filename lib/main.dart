@@ -5,6 +5,7 @@ import 'package:mehdifirstfast/rowcolumn.dart';
 import 'package:mehdifirstfast/stackscreen.dart';
 
 import 'Fashion_UI_practise/Fashion.dart';
+import 'Project-api/apiscreen.dart';
 import 'Reusable_widget.dart';
 import 'Validation/forms_screen.dart';
 import 'navigation_bottom/bottom_bar.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home : SplashScreen(),
+      home : apiscreen_movie(),
       debugShowCheckedModeBanner: false,
     );
   }
