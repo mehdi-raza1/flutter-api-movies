@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mehdifirstfast/Project-api/Api_Services.dart';
 
+import 'movieDetails.dart';
 import 'movieStack_reusable.dart';
 
 
@@ -39,14 +40,26 @@ class _apiscreen_movieState extends State<apiscreen_movie> {
               String movieNetwork =  myData[index]["network"];
               String movieDate =  myData[index]["start_date"];
               String movieStatus =  myData[index]["status"];
+              int movieId = myData[index]["id"];
 
-                return movieStack(
-                      image: movieImage,
-                      MovieName: movieName,
-                      startDate: movieNetwork,
-                      network: movieDate,
-                      Status: movieStatus,
-                    );
+                return GestureDetector(
+                   onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => movieData(movieId: movieId,)));
+
+                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text("$movieId")));
+                   },
+
+
+
+                  child:  movieStack(
+                    image: movieImage,
+                    MovieName: movieName,
+                    startDate: movieNetwork,
+                    network: movieDate,
+                    Status: movieStatus,
+                  ),
+
+                );
                   },);
 
         }

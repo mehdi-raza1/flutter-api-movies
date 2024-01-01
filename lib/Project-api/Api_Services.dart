@@ -21,4 +21,34 @@ class ApiServices{
   }
 
 }
+
+
+
+ static Future descriptionApi(id)async{
+   var request = http.Request('GET', Uri.parse('https://www.episodate.com/api/show-details?q=$id'));
+
+
+   http.StreamedResponse response = await request.send();
+
+
+   if (response.statusCode == 200) {
+     var res = await response.stream.bytesToString();
+     debugPrint(res);
+     return res;
+   }
+   else {
+     debugPrint(response.reasonPhrase);
+     return null;
+   }
+
+ }
+
+
+
+
+
+
+
 }
+
+
